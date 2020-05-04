@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[31]:
+# In[1]:
 
 
 # pip install dash
@@ -14,7 +14,7 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 
 
-# In[64]:
+# In[2]:
 
 
 desired_width = 320
@@ -24,7 +24,7 @@ pd.set_option('display.width', desired_width)
 all_teams_df = pd.read_csv('nba_shot_distribution_2019-20.csv')
 
 
-# In[63]:
+# In[3]:
 
 
 def clean_chart_format(fig):
@@ -56,7 +56,7 @@ def clean_chart_format(fig):
     return True
 
 
-# In[59]:
+# In[4]:
 
 
 def make_shot_dist_chart(input_df, color_continuous_scale=None, size_col='shots_count', col_col='pl_acc', range_color=None):
@@ -84,7 +84,7 @@ def make_shot_dist_chart(input_df, color_continuous_scale=None, size_col='shots_
     return fig
 
 
-# In[60]:
+# In[5]:
 
 
 app = dash.Dash(__name__)
@@ -131,7 +131,7 @@ app.layout = html.Div([
 ])
 
 
-# In[61]:
+# In[6]:
 
 
 @app.callback(
@@ -150,7 +150,7 @@ def update_graph(grpname):
     return fig
 
 
-# In[62]:
+# In[ ]:
 
 
 # Run Local Server 
